@@ -24,11 +24,45 @@ Thus pearl was born out of _hubris_ on my part.
 
 * Tor network enables anonymous internet access
 
-.image assets/tornet-blank.svg 480 _
+.image assets/tornet-blank.svg 460 _
 
 * Clients send traffic via a circuit
 
-.image assets/tornet-circuit.svg 480 _
+.image assets/tornet-circuit.svg 460 _
+
+* Circuit initiated with a CREATE command
+
+.image assets/tornet-create.svg 460 _
+
+Shared secrets established for symmetric encryption.
+
+* Circuit extended with RELAY_EXTEND
+
+.image assets/tornet-extend.svg 460 _
+
+Relay to _green_ node without green knowing the gopher's location.
+
+* Repeated to complete 3-hop circuit
+
+.image assets/tornet-extend2.svg 460 _
+
+Now streams can be established on the circuit.
+
+* Data flows
+
+.image assets/tornet-data0.svg 460 _
+
+* Data flows
+
+.image assets/tornet-data1.svg 460 _
+
+* Data flows
+
+.image assets/tornet-data2.svg 460 _
+
+* Data flows
+
+.image assets/tornet-data3.svg 460 _
 
 * Why Go?
 * Challenges

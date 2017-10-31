@@ -380,9 +380,6 @@
 
 </g>
 	<path stroke-width="8" stroke="#abcd03" d="M 200 300 L 439.2 248.4" fill="transparent" />
-	<path stroke-width="8" stroke="#abcd03" d="M 439.2 248.4 L 600.0 382.56" fill="transparent" />
-	<path stroke-width="8" stroke="#abcd03" d="M 600.0 382.56 L 734.0 196.8" fill="transparent" />
-	<path stroke-width="8" stroke="#abcd03" d="M 734.0 196.8 L 1000 300" fill="transparent" />
 	<circle cy="248.4" cx="439.2" r="7.5" fill-opacity="0.9" fill="red" />
 	<circle cy="382.56" cx="600.0" r="7.5" fill-opacity="0.9" fill="green" />
 	<circle cy="196.8" cx="734.0" r="7.5" fill-opacity="0.9" fill="blue" />

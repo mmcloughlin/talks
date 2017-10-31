@@ -386,4 +386,5 @@
 	<circle cy="248.4" cx="439.2" r="7.5" fill-opacity="0.9" fill="red" />
 	<circle cy="382.56" cx="600.0" r="7.5" fill-opacity="0.9" fill="green" />
 	<circle cy="196.8" cx="734.0" r="7.5" fill-opacity="0.9" fill="blue" />
+	<circle cy="248.4" cx="867.0" r="15.0" fill="gold" />
 </svg>
