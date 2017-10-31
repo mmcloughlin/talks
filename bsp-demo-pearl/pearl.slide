@@ -72,7 +72,7 @@ Now streams can be established on the circuit.
 
 Relay maintains many server and client connections.
 
-* Relays circuit traffic between them
+* Traffic on a circuit is relayed between them
 
 .image assets/crux-circuits1.svg 460 _
 
@@ -80,7 +80,7 @@ Relay maintains many server and client connections.
 
 .image assets/crux-circuits5.svg 460 _
 
-Relay must demux/mux circuit traffic.
+Relay must demux/mux circuit traffic.  Circuits must not interfere with each other.
 
 * Why Go?
 
@@ -116,6 +116,30 @@ Maybe we can avoid these problems now:
 - Memory problems result from _design_decisions_
 
 * Challenges
+
+Grunt work:
+
+- Forking `crypto/tls` standard library package
+- Parsing protocol data formats
+- Navigating a _work-in-progress_ spec
+
+Cryptographic details:
+
+- Auth flow
+- `NTor` handshake
+- Old `TAP` handshake
+- Some hand-rolled algorithms
+
+* Concurrency is hard
+
+State managed by an associated goroutine
+
+- `Connection`
+- `TransverseCircuit`
+
+Connection offloads to circuit via channel:
+
+.code assets/connloop.go
 
 * Current Status
 
