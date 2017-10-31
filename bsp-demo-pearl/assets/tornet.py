@@ -43,6 +43,13 @@ class Diagram(object):
         print svg
         print '</g>'
 
+    def text(self, txt, **attrs):
+        attrs['font_family'] = 'monospace'
+        print '<text {attrs}>{txt}</text>'.format(
+                attrs=self.attrs(**attrs),
+                txt=txt,
+                )
+
     def output(self):
         print '<svg width="{w}" height="{h}" version="1.1" xmlns="http://www.w3.org/2000/svg">'.format(
                 w=self.w, h=self.h,
@@ -60,13 +67,23 @@ class Diagram(object):
         for x, y in self.nodes:
             self.tag('circle', cx=x, cy=y, r=self.node_radius,
                     fill='black',
-                    fill_opacity=0.5,
+                    fill_opacity=0.4,
                     )
 
         self.embed_svg('gopher-side-right',
                 y=(self.h - self.margin_width) / 2,
                 scale=0.5,
                 )
+
+        print '<g opacity="0.5">'
+        x=self.w - self.margin_width * 0.7
+        y=(self.h - self.margin_width) / 2
+        self.embed_svg('gopher-side-right-path',
+                scale=0.5,
+                x=x, y=y,
+                )
+        self.text('?', font_size=170, x=x+65, y=y+200)
+        print '</g>'
 
         self.embed_svg(
                 'torlogo',
