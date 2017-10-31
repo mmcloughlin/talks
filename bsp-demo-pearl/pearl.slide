@@ -12,15 +12,15 @@ http://mmcloughlin.com
 
 Motivations:
 
-- Learn about Tor as a Protocol
+- Learn about the Tor protocol
 - Learn by doing!
 - Goaded by a glib writeup of a [[https://tvdw.eu/blog/2015/01/24/implementing-a-tor-relay-from-scratch/][previous Go implementation]]
 - "After a while I realized the language was not suited for the project"
 
 Thus pearl was born out of _hubris_ on my part.
 
-- Turns out it's non-trivial
 - Bradfield Sabbatical Program was a great way to revive my project
+- Turns out it's non-trivial
 
 * Tor network enables anonymous internet access
 
@@ -66,7 +66,43 @@ Now streams can be established on the circuit.
 
 .image assets/tornet-data3.svg 460 _
 
+* The crux of a relay implementation
+
+mux/demux
+
 * Why Go?
+
+Strikes a sweet spot
+
+- Fast statically typed compiled language
+- Feels like writing in a dynamic language
+- Strong tooling, standard libary and ecosystem
+
+Concurrency features:
+
+- *Goroutines:* "green threads" mapped to OS threads, running ~100k is reasonable
+- *Channels:* send and receive operations between goroutines
+
+Gained a reputation for:
+
+- Systems programming
+- High performance servers
+
+* Why not?
+
+Tom van der Woerdt had [[https://tvdw.eu/blog/2015/01/24/implementing-a-tor-relay-from-scratch/][harsh criticisms]]:
+
+- Limited cipher suites and poor performance of `crypto/tls`
+- Hence forced to use C bindings to `openssl`
+- Blamed `cgo` for buildup of OS threads and excessive locking
+- Memory usage per connection: 16KB buffer plus 4KB goroutine stack
+- Buffered channel: static array implementation causes high memory usage
+
+Maybe we can avoid these problems now:
+
+- `crypto/tls` has massively improved
+- Memory problems result from _design_decisions_
+
 * Challenges
 
 * Current Status
@@ -77,7 +113,7 @@ Now streams can be established on the circuit.
 
 .image assets/tweet.png
 
-(I crashed the tor metrics systems.)
+(Not quite. I did crash the tor metrics system though.)
 
 * Accepted into consensus
 
@@ -102,6 +138,8 @@ Now streams can be established on the circuit.
 
 * Future Work
 
+There is _a_long_way_ to go.
+
 Near term:
 
 - Nurse *production* deployment
@@ -111,9 +149,11 @@ Near term:
 
 Longer term expand protocol support:
 
-- Exit node
-- Client side
-- Hidden services
+- Exit node, client side, hidden services...
+
+Alternatively:
+
+- Contribute to new [[https://github.com/go-tor][go-tor project]] or the [[https://www.torproject.org/][official tor project]]
 
 * Acknowledgements
 
