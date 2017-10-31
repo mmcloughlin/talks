@@ -1,0 +1,44 @@
+Pearl
+Tor relay implementation in Golang
+31 Oct 2017
+
+Michael McLoughlin
+Software Engineer, Uber
+mmcloughlin@gmail.com
+http://mmcloughlin.com
+@mbmcloughlin
+
+* Background
+
+Motivations:
+
+- Learn about Tor as a Protocol
+- Learn by doing!
+- Goaded by a glib writeup of a [[https://tvdw.eu/blog/2015/01/24/implementing-a-tor-relay-from-scratch/][previous Go implementation]]
+- "After a while I realized the language was not suited for the project"
+
+Thus pearl was born out of _hubris_ on my part.
+
+- Turns out it's non-trivial
+- Bradfield Sabbatical Program was a great way to revive my project
+
+* Tor network enables anonymous internet access
+
+.image assets/tornet-blank.svg 480 _
+
+* Clients send traffic via a circuit
+
+.image assets/tornet-circuit.svg 480 _
+
+* Why Go?
+* Challenges
+* Current Status
+* Demo?
+* Future Work
+
+* Acknowledgements
+
+- *Myles* for our daily check-in and keeping me on the straight and narrow
+- *Oz* and *Myles* for setting up the program
+- *Bradfield*Sabbatical*Program* for the community and emotional suport
+- *Uber* for letting me participate
