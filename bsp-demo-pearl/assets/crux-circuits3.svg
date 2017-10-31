@@ -1,0 +1,18 @@
+<svg width="800" height="800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<path stroke-opacity="0.5" stroke-width="16" stroke="blue" d="M 416.046780777 305.350642756 L 466.861586573 5.62767815045" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="blue" d="M 366.623005362 490.01097838 L 260.929189006 775.04574325" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="blue" d="M 405.934760476 495.816379696 L 424.72816865 799.234915401" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="blue" d="M 462.487762664 327.121474238 L 660.365677768 96.339475993" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="blue" d="M 465.962131781 330.250468311 L 674.842215756 109.376951295" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 447.315354633 483.529977948 L 597.14731097 748.041574783" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 333.094797377 468.845434576 L 121.228322403 686.855977399" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 345.999360759 320.62789557 L 174.997336496 69.2828982102" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 380.853442626 305.92870076 L 320.22267761 8.03625316587" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 410.341622745 304.558652362 L 443.090094772 2.32771817424" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 370.026356439 491.200771333 L 275.109818496 780.003213886" fill="transparent" />
+	<path stroke-opacity="0.5" stroke-width="16" stroke="green" d="M 485.62680631 443.405645269 L 756.778359623 580.856855288" fill="transparent" />
+	<circle cx="400" cy="400" stroke-width="16" stroke="grey" r="96.0" fill="transparent" />
+	<path stroke-opacity="0.7" stroke-width="5.6" stroke="red" d="M 424.72816865 799.234915401L 405.934760476 495.816379696L 345.999360759 320.62789557L 174.997336496 69.2828982102" fill="transparent" />
+	<path stroke-opacity="0.7" stroke-width="5.6" stroke="red" d="M 424.72816865 799.234915401L 405.934760476 495.816379696L 410.341622745 304.558652362L 443.090094772 2.32771817424" fill="transparent" />
+	<path stroke-opacity="0.7" stroke-width="5.6" stroke="red" d="M 424.72816865 799.234915401L 405.934760476 495.816379696L 370.026356439 491.200771333L 275.109818496 780.003213886" fill="transparent" />
+</svg>

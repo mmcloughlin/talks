@@ -68,7 +68,19 @@ Now streams can be established on the circuit.
 
 * The crux of a relay implementation
 
-mux/demux
+.image assets/crux.svg 460 _
+
+Relay maintains many server and client connections.
+
+* Relays circuit traffic between them
+
+.image assets/crux-circuits1.svg 460 _
+
+* Demux/mux circuit traffic
+
+.image assets/crux-circuits5.svg 460 _
+
+Relay must demux/mux circuit traffic.
 
 * Why Go?
 
