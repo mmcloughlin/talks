@@ -30,6 +30,8 @@ Thus pearl was born out of _hubris_ on my part.
 
 .image assets/tornet-circuit.svg 460 _
 
+3-hop circuits consist of: *guard* (red), *middle* (green) and *exit*.
+
 * Circuit initiated with a CREATE command
 
 .image assets/tornet-create.svg 460 _
@@ -48,27 +50,43 @@ Relay to _green_ node without green knowing the gopher's location.
 
 Now streams can be established on the circuit.
 
-* Data flows
+* Data can now be relayed
 
 .image assets/tornet-data0.svg 460 _
 
-* Data flows
+* Each node removes its layer of encryption
 
 .image assets/tornet-data1.svg 460 _
 
-* Data flows
+* It's like peeling and onion...
 
 .image assets/tornet-data2.svg 460 _
 
-* Data flows
+* Exit node sees the actual packet
 
 .image assets/tornet-data3.svg 460 _
 
 * Why Go?
 * Challenges
+
 * Current Status
-* Demo?
+
+.image assets/works-on-my-machine.png 500 _
+
 * Future Work
+
+Near term:
+
+- Nurse *production* deployment
+- Develop more realistic local *testing*
+- Focus on *performance*
+- Revisit *parser*
+
+Longer term expand protocol support:
+
+- Exit node
+- Client side
+- Hidden services
 
 * Acknowledgements
 
