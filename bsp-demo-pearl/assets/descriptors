@@ -1,0 +1,27 @@
+router pearl000 35.203.138.1 9001 0 0
+signing-key
+-----BEGIN RSA PUBLIC KEY-----
+MIGJAoGBAKzTaN4tZGv1kiQWBzeuOk+ovr2LtIURlaVC38j6j/fQuYfuAZX/XvV1
+fQr9EVh+T617dh+frt2D0QDuzLUvP3hpgVozW94w+Ib85pUCne03f4rj3QYu5Qtg
+GvzShslZI6vgyy0g2jAOGa4jxT/UYAcKE5dQo8CBKA6Qb0P5Joc1AgMBAAE=
+-----END RSA PUBLIC KEY-----
+fingerprint 6832 5B4B 1E17 7374 B84D 372F 0304 6351 BEE7 FF6A
+onion-key
+-----BEGIN RSA PUBLIC KEY-----
+MIGJAoGBANN/gLTe05kWKPSEyYJeknuxQst+cVsVmZrZgIYNXuhPn+3XnWhEc10r
+ICa82FkB7hBH6REuW0ugGDc2QLwENmDiaBiFW1LDujEFeVlV8o0VSDwrL3VCPsPL
+zC4/zHqR4DmLFXp5V238MKj85Pud04g65piZCIAsy6hiGMDCoGdtAgMBAAE=
+-----END RSA PUBLIC KEY-----
+ntor-onion-key ATSN2Q9KwCeRu35agh/ChjX8MsgM/FGFRDUX6o9Sbmk
+platform Pearl cfaf5d6 on Linux
+contact pearl@m15n.org https://github.com/mmcloughlin/pearl
+bandwidth 153600 307200 153600
+published 2017-10-31 06:20:14
+reject *:*
+proto Link=4 LinkAuth=1 Relay=2
+router-signature
+-----BEGIN SIGNATURE-----
+QEJzsPnZKeAQFXSOCyZgs8j0KB82F6/rwq9o0eoLRgIjFc2WjF+iWHrdfrq4C++d
+kggmLgwUOSY5rMUC4wL8SU4h/FmHn4R0syC00Alo2F4vOkojxbncHXTKgV83M+CU
+MANyfYaEsJ9mRmpZGmfpFpGftzVIwgdYhRlRQkwqU/Q=
+-----END SIGNATURE-----

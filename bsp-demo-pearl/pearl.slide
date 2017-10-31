@@ -73,6 +73,33 @@ Now streams can be established on the circuit.
 
 .image assets/works-on-my-machine.png 500 _
 
+* It's gone viral
+
+.image assets/tweet.png
+
+(I crashed the tor metrics systems.)
+
+* Accepted into consensus
+
+  $ wget http://86.59.21.38/tor/server/all
+  $ cat all
+  router pearl000 35.203.138.1 9001 0 0
+  signing-key
+  -----BEGIN RSA PUBLIC KEY-----
+  MIGJAoGBAKzTaN4tZGv1kiQWBzeuOk+ovr2LtIURlaVC38j6j/fQuYfuAZX/XvV1
+  fQr9EVh+T617dh+frt2D0QDuzLUvP3hpgVozW94w+Ib85pUCne03f4rj3QYu5Qtg
+  GvzShslZI6vgyy0g2jAOGa4jxT/UYAcKE5dQo8CBKA6Qb0P5Joc1AgMBAAE=
+  -----END RSA PUBLIC KEY-----
+  fingerprint 6832 5B4B 1E17 7374 B84D 372F 0304 6351 BEE7 FF6A
+  ...
+  platform Pearl cfaf5d6 on Linux
+  contact pearl@m15n.org https://github.com/mmcloughlin/pearl
+  ...
+
+* Pearl node running in the Tor network
+
+.image assets/atlas-screenshot.png 500 _
+
 * Future Work
 
 Near term:
