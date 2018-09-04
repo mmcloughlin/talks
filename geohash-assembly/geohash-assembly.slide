@@ -1,0 +1,228 @@
+Geohash in Golang Assembly
+Lessons in Absurd Optimization
+30 Aug 2018
+
+Michael McLoughlin
+Software Engineer, Uber ATG
+mmcloughlin@gmail.com
+https://mmcloughlin.com/
+@mbmcloughlin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* 
+
+.background assets/knuth.jpg
+
+* What is Geohash?
+
+* Geohash is a Point Encoding Scheme
+
+Maps a latitude longitude pair to a 64-bit integer or equivalent string.
+
+- Indexing geo data
+- Proximity queries
+- Used in Redis, for example
+
+Example:
+
+- *Gophercon* is at: `(39.74279,-104.99706)`
+- Integer geohash is: `0xceb7f254240fd612`
+- String geohash is: [[http://geohash.org/tuvz4p141zc1][tuvz4p141zc1]]
+
+Geohash can be taken at various _precisions_.
+
+Divides the earth into _grid_cells_ of various sizes.
+
+
+
+* 
+
+.background assets/p10.png
+
+
+
+* 
+
+.background assets/p6.png
+
+
+
+* 
+
+.background assets/p2.png
+
+
+
+* 
+
+.background assets/p1.png
+
+
+
+* Forget about String Geohashes
+
+For _internal_ or performance-sensitive use cases integer form is enough.
+
+#-----------------------------------------------------------------------------
+
+* How it Works
+
+* Step 1: Quantize latitude/longitude to 32-bits
+
+
+.image assets/spec-quant-lng.svg _ 930
+
+
+- Input: (39.74279, -104.99706)
+- Quantized: (`0xa7ce23e4`, `0xbdd04391`)
+
+* Step 2: Bit Interleave
+
+
+.image assets/spec-interleave.svg _ 930
+
+
+- Input: (39.74279, -104.99706)
+- Quantized: (`0xa7ce23e4`, `0xbdd04391`)
+- Interleaved: `0xceb7f254240fd612`
+
+This is the _integer_geohash_.
+
+#-----------------------------------------------------------------------------
+
+* Pure Go
+
+* High Level
+
+
+.code assets/geohash.go /\/\/ EncodeInt/,/^}/
+
+
+* Quantize
+
+
+.image assets/spec-quant-lng.svg _ 930
+
+
+
+.code assets/geohash.go /\/\/ Quantize/,/^}/
+
+
+* Intermediate Step: Spread
+
+
+.image assets/spec-spread.svg _ 930
+
+
+
+.code assets/geohash.go /\/\/ Spread/,/^}/
+
+
+* Interleave
+
+
+.image assets/spec-interleave-impl.svg _ 930
+
+
+
+.code assets/geohash.go /\/\/ Interleave/,/^}/
+
+
+
+
+* Pure Go Performance
+
+.background assets/EncodeInt_bignumber.svg
+
+
+#-----------------------------------------------------------------------------
+
+* Assembly
+
+* 17 Instructions
+
+
+.code assets/asm.s /EncodeIntAsm\(SB\)/,/RET/ HLNONE
+
+
+* 
+
+.image assets/how-to-draw-an-owl.jpg 550 _
+
+* Scale
+
+
+.code assets/asm.s /EncodeIntAsm\(SB\)/,/RET/ HLmul
+
+
+* Unit Interval Trick
+
+
+.code assets/asm.s /EncodeIntAsm\(SB\)/,/RET/ HLtrick
+
+
+* PDEP
+
+
+.code assets/asm.s /EncodeIntAsm\(SB\)/,/RET/ HLspread
+
+
+* Interleave
+
+
+.code assets/asm.s /EncodeIntAsm\(SB\)/,/RET/ HLinterleave
+
+
+
+* Assembly Implementation
+
+.background assets/EncodeIntAsm_bignumber.svg
+
+
+#-----------------------------------------------------------------------------
+
+* SIMD
+
+- What if we use special instructions to do *four*geohashes*at*once*
+- [[https://software.intel.com/sites/landingpage/IntrinsicsGuide/][Intel Intrisics]]
+- Interleaving trick thanks to [[https://lemire.me/blog/2018/01/09/how-fast-can-you-bit-interleave-32-bit-integers-simd-edition/][Daniel Lemire]]
+
+
+.code assets/asm.s /EncodeIntSimd\(SB\)/,/RET/ HLNONE
+
+
+
+* SIMD Implementation
+
+.background assets/EncodeIntSimd_bignumber.svg
+
+
+#-----------------------------------------------------------------------------
+
+* Conclusion
+
+- Massive performance gains are possible
+- Generally prefer to rely on the compiler
+- Assembly may make sense to access of special instruction sets
+
+Full details:
+
+- [[https://mmcloughlin.com/posts/geohash-assembly][Geohash in Golang Assembly]] blog post
+- [[https://github.com/mmcloughlin/geohash][mmcloughlin/geohash]] package
+- [[https://github.com/mmcloughlin/geohashbench][Comparison of all Golang geohash packages]]

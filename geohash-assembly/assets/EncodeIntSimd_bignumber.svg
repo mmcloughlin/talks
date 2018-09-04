@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC
+    "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1"
+    width="550" height="350" viewBox="0 0 550 350"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+        <style type="text/css">
+            text {
+                text-anchor: middle;
+                dominant-baseline: middle;
+                font-family: monospace;
+                font-size: 61px;
+            }
+            text.label { font-size: 15.2777777778px; opacity: 0.6; }
+        </style>
+        <text x="137.5" y="140.0">1.13</text><text x="137.5" y="192.5" class="label">Nanoseconds / Geohash</text><text x="412.5" y="140.0">883.00</text><text x="412.5" y="192.5" class="label">Million Geohashes / Second</text></svg>
